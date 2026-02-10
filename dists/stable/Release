@@ -5,14 +5,14 @@ Codename: stable
 Architectures: amd64 arm64
 Components: main
 Description: PortX CLI apt repository
-Date: Tue, 10 Feb 2026 19:37:02 +0000
+Date: Tue, 10 Feb 2026 21:13:00 +0000
 MD5Sum:
- 8f3d296f8648c41ab248b23bf0ac56a0 618 main/binary-amd64/Packages
- 4c2d780065f218f8c21369cf19dc9d3b 456 main/binary-amd64/Packages.gz
- 51c9a852be41f1809f326eeddaf1d0d8 618 main/binary-arm64/Packages
- 17347facb38b6e0df6f26a07ec4b64ab 456 main/binary-arm64/Packages.gz
+ e6989ff3431a072dd70d459f5364fbcc 618 main/binary-amd64/Packages
+ e1669e821ad2a20168182552967fb251 455 main/binary-amd64/Packages.gz
+ 8781ec3b1893cd00285c043f53809153 618 main/binary-arm64/Packages
+ 14c218b76d01cc6142d5e8194c5d3129 455 main/binary-arm64/Packages.gz
 SHA256:
- 0e109d494054a78607f02c17c82c2e9b92233d663b66e4f51da81f4d7f63b54d 618 main/binary-amd64/Packages
- 26d52f35f6f81e6ebaa18c61443137e76380d3bd37ed22b059b1ec37ad4672e5 456 main/binary-amd64/Packages.gz
- 2100025b87c70eee866628fa87bc14f23b537c841172fbafaaeb629f26a78cad 618 main/binary-arm64/Packages
- 133eb7375d9d5e69f0a67bfa2f587e58fe15d59be7e3fca73ff21bc971a32508 456 main/binary-arm64/Packages.gz
+ df2cf3aa73420e06978526723d54b198973672eca7d228229cd5468b3a69b88f 618 main/binary-amd64/Packages
+ 5ec4e3f6317772756f7ae88cf2274cef9874692de55526fc1b62c2f12cc76734 455 main/binary-amd64/Packages.gz
+ 4da435ee865f77e8eda7d890abc1e300fce76652c9356e35897cc40e632058aa 618 main/binary-arm64/Packages
+ 088aad4c27bc222944796fc4caa636c5b5abb43e53e6fb22a3008a9170338934 455 main/binary-arm64/Packages.gz
