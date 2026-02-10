@@ -1,0 +1,18 @@
+Package: ptx
+Version: 1.0.14
+Architecture: amd64
+Maintainer: PortX <support@portx.io>
+Installed-Size: 78580
+Filename: pool/main/p/ptx/ptx_1.0.14_amd64.deb
+Size: 27976760
+MD5sum: b08c4d76c4f33ec548ce74777e376cac
+SHA1: 3064aa0c79fd3c70a1631d3d8dc53ca871cd4ef1
+SHA256: c11d454ac5831be5ef6a82887a45e0c29799ef5fbfddc5094719ef22b0e6c387
+Section: utils
+Priority: optional
+Homepage: https://github.com/portx-phim/ptx-cli
+Description: PortX Platform CLI
+ A unified command-line interface for managing PortX platform resources.
+ Connect to Kubernetes clusters, manage applications, and port forward
+ to databases and services.
+
