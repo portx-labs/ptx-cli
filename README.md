@@ -21,7 +21,7 @@ brew install ptx
 ### Linux (apt)
 
 ```sh
-echo "deb [trusted=yes] https://ptx-cli-releases.s3.amazonaws.com/apt stable main" | sudo tee /etc/apt/sources.list.d/portx.list
+echo "deb [trusted=yes] https://portx-labs.github.io/ptx-cli stable main" | sudo tee /etc/apt/sources.list.d/portx.list
 sudo apt update
 sudo apt install ptx
 ```
