@@ -4,10 +4,11 @@ The command-line interface for the PortX platform.
 
 ## Features
 
-- **Authentication** - OIDC device flow via Keycloak
+- **Authentication** - OIDC device flow for customers, AWS SSO for internal engineers
 - **Cluster Access** - Connect to EKS clusters and manage kubeconfig
 - **Port Forwarding** - SSM-based port forwarding to databases and services
 - **Project Management** - Provision and manage applications
+- **Multi-Org Support** - `--org` flag and `PTX_ORG` env var for per-command tenant override
 
 ## Installation
 
@@ -37,6 +38,42 @@ choco install ptx
 ```powershell
 winget install PortX.ptx
 ```
+
+## Quick Start
+
+```bash
+# Configure your organization
+ptx config add --org <your-org>
+
+# Authenticate
+ptx login
+
+# Connect to a cluster
+ptx cluster --access
+
+# Forward a database port
+ptx port-forward --start
+```
+
+## Usage
+
+### Organization Override
+
+Use `--org` or `PTX_ORG` to target a specific organization without changing your saved config:
+
+```bash
+# Per-command override (does NOT modify config.yaml):
+ptx --org myorg cluster --access
+ptx --org myorg port-forward --start
+
+# Via environment variable:
+PTX_ORG=myorg ptx cluster --access
+
+# Login with --org persists it as the active org:
+ptx login --org myorg
+```
+
+Priority: `--org` flag > `PTX_ORG` env var > `config.yaml` current_org_id.
 
 ## Downloads
 
