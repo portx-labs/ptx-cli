@@ -4,7 +4,7 @@ The command-line interface for the PortX platform.
 
 ## Features
 
-- **Authentication** - OIDC device flow via Keycloak
+- **Authentication** - Secure login via OIDC device flow
 - **Cluster Access** - Connect to EKS clusters and manage kubeconfig
 - **Port Forwarding** - SSM-based port forwarding to databases and services
 - **Project Management** - Provision and manage applications
@@ -36,6 +36,22 @@ choco install ptx
 
 ```powershell
 winget install PortX.ptx
+```
+
+## Quick Start
+
+```bash
+# Configure your organization
+ptx config add --org <your-org>
+
+# Authenticate
+ptx login
+
+# Connect to a cluster
+ptx cluster --access
+
+# Forward a database port
+ptx port-forward --start
 ```
 
 ## Downloads
