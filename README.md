@@ -4,7 +4,7 @@ The command-line interface for the PortX platform.
 
 ## Features
 
-- **Authentication** - OIDC device flow for customers, AWS SSO for internal engineers
+- **Authentication** - Secure login via OIDC device flow
 - **Cluster Access** - Connect to EKS clusters and manage kubeconfig
 - **Port Forwarding** - SSM-based port forwarding to databases and services
 - **Project Management** - Provision and manage applications
