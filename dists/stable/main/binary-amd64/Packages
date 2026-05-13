@@ -4,10 +4,10 @@ Architecture: amd64
 Maintainer: PortX <support@portx.io>
 Installed-Size: 78624
 Filename: pool/main/p/ptx/ptx_1.0.22_amd64.deb
-Size: 27991856
-MD5sum: 392a57d5b8bd14937c9dceeb72f66805
-SHA1: 3c881045fd094d9dfec926786d97067cdd898e44
-SHA256: 264ac56ac49cd28fcac2afbec0af4933c4e77c1781770bb4c0126f308ef77547
+Size: 27991384
+MD5sum: 4649e616fd46bc6a61c83afa135c85f7
+SHA1: 0714747794b1d61fe96ccc346d1d22d3e53d8996
+SHA256: 1558a1765cacc1ce0521cb966db0c202796ab6e22c16a07c2d814194b63a2548
 Section: utils
 Priority: optional
 Homepage: https://github.com/portx-phim/ptx-cli
