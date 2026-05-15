@@ -38,6 +38,23 @@ choco install ptx
 winget install PortX.ptx
 ```
 
+## Prerequisites
+
+To use `ptx cluster --access` with `kubectl`, you need:
+
+- **AWS CLI v2** — used by the generated kubeconfig to fetch EKS auth tokens (`aws eks get-token`)
+- **kubectl** — for interacting with the cluster
+
+Install AWS CLI:
+
+| OS | Command |
+|----|---------|
+| macOS | `brew install awscli` |
+| Linux (deb) | `sudo apt install awscli` |
+| Windows | `winget install Amazon.AWSCLI` |
+
+Without AWS CLI installed, `kubectl` will fail with `exec: executable aws not found`.
+
 ## Quick Start
 
 ```bash
