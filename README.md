@@ -71,6 +71,38 @@ ptx cluster --access
 ptx port-forward --start
 ```
 
+## Examples
+
+### Connect to a cluster and list pods
+
+After running `ptx cluster --access`, your kubeconfig is automatically merged and the context is set to the selected cluster:
+
+```bash
+ptx cluster --access            # interactive cluster picker
+kubectl get pods -A             # list pods across all namespaces
+kubectl get pods -n my-app      # list pods in a specific namespace
+kubectl get nodes               # list cluster nodes
+```
+
+### Forward a VPC endpoint (core banking, RDS proxy, internal API)
+
+Use `--host` and `--port` to forward an arbitrary VPC endpoint through the tenant's bastion:
+
+```bash
+# Start a forward to a VPC endpoint on port 443
+ptx port-forward --start --host vpce-034cf664.us-west-2.vpce.amazonaws.com --port 443
+
+# In another terminal, hit the service via localhost
+curl https://localhost:443/healthcheck
+
+# See what sessions are running
+ptx port-forward --list
+
+# Stop a session when you're done
+ptx port-forward --stop          # interactive picker
+ptx port-forward --stop-all      # stop everything
+```
+
 ## Downloads
 
 Binary releases are available on the [Releases](https://github.com/portx-labs/ptx-cli/releases) page.
