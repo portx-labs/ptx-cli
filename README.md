@@ -102,6 +102,129 @@ ptx port-forward --list
 ptx port-forward --stop          # interactive picker
 ptx port-forward --stop-all      # stop everything
 ```
+## Common Database Access Workflows
+
+One of the most common use cases for `ptx port-forward` is accessing private RDS/Aurora databases without requiring Tailscale, VPN access, or temporary Kubernetes pods.
+
+### How It Works
+
+`ptx port-forward` creates a secure tunnel through AWS Systems Manager Session Manager (SSM) and the tenant bastion host:
+
+```text
+Local Machine
+      ↓
+localhost:<port>
+      ↓
+AWS SSM Session Manager
+      ↓
+Tenant Bastion
+      ↓
+Private RDS / Aurora / VPC Endpoint
+```
+
+### Verify Bastion Connectivity
+
+Before creating a tunnel, verify the bastion is online and SSM-ready:
+
+```bash
+ptx port-forward --check-status
+```
+
+Example output:
+
+```text
+Checking SSM connectivity status for ASG: portx-colony-bastion-pre
+
+EC2 Status: running
+SSM Status: Online and ready
+```
+
+### PostgreSQL / Aurora Example
+
+Forward a PostgreSQL endpoint:
+
+```bash
+ptx port-forward --start \
+  --host tenantx-aurora-dev.xxxxx.us-west-2.rds.amazonaws.com \
+  --port 5432
+```
+
+Connect locally:
+
+```bash
+psql -h 127.0.0.1 -p 5432 -U postgres
+```
+
+### MySQL RDS Example
+
+Forward a MySQL endpoint:
+
+```bash
+ptx port-forward --start \
+  --host tenanty-db.xxxxx.us-west-2.rds.amazonaws.com \
+  --port 3306
+```
+
+Connect locally:
+
+```bash
+mysql -h 127.0.0.1 -P 3306 -u <username> -p
+```
+
+### Managing Active Sessions
+
+List active tunnels:
+
+```bash
+ptx port-forward --list
+```
+
+Example:
+
+```text
+PID      Local Port   Remote Host
+78683    3306         tenanty-db.xxxxx.us-west-2.rds.amazonaws.com
+```
+
+Stop a specific session:
+
+```bash
+ptx port-forward --stop
+```
+
+Stop all sessions:
+
+```bash
+ptx port-forward --stop-all
+```
+
+### Troubleshooting
+
+Verify the tunnel is active:
+
+```bash
+ptx port-forward --list
+```
+
+Verify the local port is listening:
+
+```bash
+nc -vz 127.0.0.1 3306
+```
+
+or
+
+```bash
+nc -vz 127.0.0.1 5432
+```
+
+If the tunnel starts successfully but the database connection fails, verify:
+
+- Database credentials
+- Database engine (MySQL vs PostgreSQL)
+- Database security group rules
+- Correct endpoint and port
+- Correct environment selected via `ptx cluster --access`
 
 ## Troubleshooting
 
