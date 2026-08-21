@@ -1,13 +1,13 @@
 Package: ptx
-Version: 1.0.28
+Version: 1.0.29
 Architecture: arm64
 Maintainer: PortX <support@portx.io>
-Installed-Size: 73384
-Filename: pool/main/p/ptx/ptx_1.0.28_arm64.deb
-Size: 24285036
-MD5sum: d0a531fdad530922f8c8e8b9d1593ccd
-SHA1: e83d8798ddb8d234400debadeb44a7141a3e02ec
-SHA256: 580576c3d2f5aec54cf244f4942cfd73452a0923feef1b1da875322aa8fdd482
+Installed-Size: 73448
+Filename: pool/main/p/ptx/ptx_1.0.29_arm64.deb
+Size: 24291756
+MD5sum: a43ce33f7ecd837dfa37e99f3fa8e710
+SHA1: f11c0f84b9f516b3a5af5e1d8046350aace0e826
+SHA256: a47b65bf1b0ca3961a7e29b87493afabcb7cd2a2f09219ce8f5036e979d501f2
 Section: utils
 Priority: optional
 Homepage: https://github.com/portx-phim/ptx-cli
